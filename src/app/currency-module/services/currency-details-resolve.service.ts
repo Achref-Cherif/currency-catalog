@@ -16,7 +16,6 @@ export class CurrencyDetailsResolveService  implements Resolve<any> {
         if (currency) {
             return currency;
         } else {
-          this.router.navigate([""]);
           return false;
         }
     });

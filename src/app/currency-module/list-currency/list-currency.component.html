@@ -7,7 +7,7 @@
   </div>
   <div class="row justify-content-center">
     <div class="row col-12">
-      <div class="col-lg-2 col-sm-6 col-md-3 currency-item" *ngFor="let currency of filtredItems | paginate: { itemsPerPage: 10, currentPage: p }">
+      <div class="col-lg-2 col-sm-6 col-md-3" *ngFor="let currency of pagingC.items">
         <div   class="shadow-lg p-3 mb-5 rounded row" (click)="afficheDetails(currency.code)">
           <div class="col-12">
             <span class="label">Code : </span>
@@ -25,7 +25,6 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    <app-paging [items]="items" ></app-paging>
   </div>
-</div>

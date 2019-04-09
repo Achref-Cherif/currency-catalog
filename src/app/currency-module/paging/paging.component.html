@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-1">
+    <select (ngModelChange)="onPageSizeChange($event)" name="pageSize" class="form-control" [(ngModel)]="size">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+  <div class="col-11">
+    <ul class="pagination">
+      <li [class.disabled]="0==currentPage" class="page-item">
+        <a (click)="setPage(0)" class="page-link">«</a>
+      </li>
+      <li [class.disabled]="0==currentPage" class="page-item">
+        <a (click)="setPage(currentPage-1)" class="page-link">‹</a>
+      </li>
+      <li [class.active]="p-1==currentPage" class="page-item" *ngFor=" let p of pages">
+        <a class="page-link" (click)="setPage(p-1)">{{p}}</a>
+      </li>
+      <li [class.disabled]="currentPage+1==lastPage" class="page-item">
+        <a (click)="setPage(currentPage+1)" class="page-link">›</a>
+      </li>
+      <li [class.disabled]="currentPage+1==lastPage" class="page-item">
+        <a (click)="setPage(lastPage-1)" class="page-link">»</a>
+      </li>
+    </ul>
+  </div>
+</div>

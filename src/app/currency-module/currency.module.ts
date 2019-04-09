@@ -5,10 +5,11 @@ import { CurrencyRoutingModule } from './currency.routing';
 import { FilterCurrencyComponent } from '../Currency-module/filter-currency/filter-currency.component';
 import { FormsModule } from '@angular/forms';
 import { CurrencyDetailsComponent } from './currency-details/currency-details.component';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PagingComponent } from './paging/paging.component'; // <-- import the module
 
 @NgModule({
-  declarations: [ListCurrencyComponent, FilterCurrencyComponent, CurrencyDetailsComponent],
+  declarations: [ListCurrencyComponent, FilterCurrencyComponent, CurrencyDetailsComponent, PagingComponent],
   imports: [
     CommonModule,
     CurrencyRoutingModule,
