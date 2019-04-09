@@ -1,0 +1,17 @@
+<div class="container filter-container">
+  <div class="row">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input (keyup)="onKeyUp($event)" name="filterValue" [(ngModel)]="filterCurrencyItem.value" type="text" class="form-control" placeholder="Search">
+    </div>
+    <div>
+      <div class="form-group">
+        <select (ngModelChange)="onNameChange($event)" class="form-control" name="filterName" [(ngModel)]="filterCurrencyItem.name" >
+          <option value="">Select Filter By</option>
+          <option value="code">Code</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

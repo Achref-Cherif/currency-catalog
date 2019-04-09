@@ -1,0 +1,31 @@
+<div class="content container-fluid">
+  <div class="row title">
+    <h1> {{title}}</h1>
+  </div>
+  <div class="row filter">
+    <app-filter-currency (onFilterChange)="onFilterChange()" [filterCurrencyItem]="filterCurrencyItem"></app-filter-currency>
+  </div>
+  <div class="row justify-content-center">
+    <div class="row col-12">
+      <div class="col-lg-2 col-sm-6 col-md-3 currency-item" *ngFor="let currency of filtredItems | paginate: { itemsPerPage: 10, currentPage: p }">
+        <div   class="shadow-lg p-3 mb-5 rounded row" (click)="afficheDetails(currency.code)">
+          <div class="col-12">
+            <span class="label">Code : </span>
+            <span class="value">{{currency.code}}</span>
+          </div>
+          <div class="col-12">
+            <span class="label">Name : </span>
+            <span class="value">{{currency.name}}</span>
+          </div>
+          <div class="col-12">
+            <span class="label">Quantité Min : </span>
+            <span class="value">{{currency.minimal_amount  | number:'1.1-5'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container details-container">
+  <h1>{{currentCurrency?.code}}</h1>
+  <ul class="list-group">
+    <li class="list-group-item"><span class="label">Code : </span> <span>{{currentCurrency?.code}}</span></li>
+    <li class="list-group-item"><span class="label">Name : </span> <span>{{currentCurrency?.name}}</span></li>
+    <li class="list-group-item"><span class="label">Min Confirmations : </span>
+      <span>{{currentCurrency?.min_confirmations}}</span></li>
+    <li class="list-group-item"><span class="label">est Crypto ?: </span> <span>{{currentCurrency?.is_crypto}}</span>
+    </li>
+    <li class="list-group-item"><span class="label">Minimal Amount : </span>
+      <span>{{currentCurrency?.minimal_amount}}</span></li>
+  </ul>
+  <br>
+  <button routerLink="/" type="button" class="btn btn-secondary btn-lg btn-block">Back</button>
+</div>
